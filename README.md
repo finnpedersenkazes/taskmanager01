@@ -1,24 +1,13 @@
-# README
+# Simple Task Manager App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a very simple task manager app made with Ruby on Rails.
 
-Things you may want to cover:
+These are a couple of screenshots: 
 
-* Ruby version
+![alt text](https://github.com/finnpedersenkazes/taskmanager01/blob/master/app/assets/images/index.jpeg "Index")
+![alt text](https://github.com/finnpedersenkazes/taskmanager01/blob/master/app/assets/images/show.jpeg "Show")
 
-* System dependencies
+Part of the app is the first attempt to automatically generate an app. 
+Though some files have been modified manually. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Finn Pedersen
