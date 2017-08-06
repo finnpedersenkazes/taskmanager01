@@ -19,7 +19,8 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
-  welcome: "Welcome to Task Manager"
-  tagline: "The best task manager there is."
+da:
+  hello: "Hej verden"
+  welcome: "Velkommen til Task Manager"
+  tagline: "Den bedste opgave manager der findes."
+

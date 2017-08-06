@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get "/team" => 'pages#team'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :tasks
+  scope "/:locale" do
+    resources :tasks
+  end
   # get "/tasks" => tasks#index
   # get "/tasks/:id" => tasks#show
   # get "/tasks/new" => tasks#new
