@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1 class="text-center">Task</h1>
+      <p><strong>Short Description</strong></p>
+      <p><%= @task.short_description %></p>
+      <p><strong>Long Description</strong></p>
+      <p><%= @task.long_description %></p>
+      <p><strong>Nature</strong></p>
+      <p><%= @task.nature %></p>
+      <p><strong>Urgency</strong></p>
+      <p><%= @task.urgency %></p>
+      <p><strong>Duration</strong></p>
+      <p><%= @task.duration %></p>
+      <p><strong>Attention Date</strong></p>
+      <p><%= @task.attention_date %></p>
+      <p><strong>Deadline</strong></p>
+      <p><%= @task.deadline %></p>
+      <p><strong>Expiration Date</strong></p>
+      <p><%= @task.expiration_date %></p>
+      <p><strong>Planned Date</strong></p>
+      <p><%= @task.planned_date %></p>
+      <p><strong>Starting Time</strong></p>
+      <p><%= @task.starting_time %></p>
+      <p><strong>Removed Date</strong></p>
+      <p><%= @task.removed_date %></p>
+      <p><strong>Status</strong></p>
+      <p><%= @task.status %></p>
+    </div>
+  </div>
+</div>
+<p class="text-center">
+  <%= link_to "Edit", edit_task_path(@task), class: "btn btn-warning " %>
+  <%= link_to "Delete", task_path(@task), method: :delete, class: "btn btn-danger" %>
+  <%= link_to "Tasks", tasks_path, class: "btn btn-primary"  %>
+</p>

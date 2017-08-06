@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-xs-12 col-sm-6 col-sm-offset-3"> -->
+      <h1 class="text-center">Tasks</h1>
+      <p>
+        <%= link_to "Home Page", root_path, class: "btn btn-primary" %>
+        <%= link_to "Add Task", new_task_path, class: "btn btn-primary" %>
+      </p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Short Description</th>
+            <th>Long Description</th>
+            <th>Nature</th>
+            <th>Urgency</th>
+            <th>Duration</th>
+            <th>Attention Date</th>
+            <th>Deadline</th>
+<!--
+            <th>Expiration Date</th>
+            <th>Planned Date</th>
+            <th>Starting Time</th>
+            <th>Removed Date</th>
+ -->
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tasks.each do |task| %>
+            <tr>
+              <td><%= link_to task.short_description, task_path(task) %></td>
+              <td><%= task.long_description %></td>
+              <td><%= task.nature %></td>
+              <td><%= task.urgency %></td>
+              <td><%= task.duration %></td>
+              <td><%= task.attention_date %></td>
+              <td><%= task.deadline %></td>
+<!--
+              <td><%= task.expiration_date %></td>
+              <td><%= task.planned_date %></td>
+              <td><%= task.starting_time %></td>
+              <td><%= task.removed_date %></td>
+ -->
+              <td><%= task.status %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <!-- </div> -->
+  </div>
+</div>
+
