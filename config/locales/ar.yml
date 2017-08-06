@@ -19,8 +19,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-da:
-  hello: "Hej verden"
-  welcome: "Velkommen til Task Manager"
-  tagline: "Den bedste opgavemanager der findes."
+ar:
+  hello: "مرحبا بالعالم"
+  welcome: "مرحبا بك في إدارة المهام"
+  tagline: "أفضل مدير المهام هناك."
+
+
 
