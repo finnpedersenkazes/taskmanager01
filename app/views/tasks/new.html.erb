@@ -3,20 +3,21 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1 class="text-center">New Task</h1>
       <%= simple_form_for @task do |f| %>
-        <%= f.input :short_description, placeholder:"Short Description", label: "Short Description" %>
-        <%= f.input :long_description, placeholder:"Long Description", label: "Long Description" %>
-        <%= f.input :nature, placeholder:"Nature", label: "Nature" %>
-        <%= f.input :urgency, placeholder:"Urgency", label: "Urgency" %>
-        <%= f.input :duration, placeholder:"Duration", label: "Duration" %>
-        <%= f.input :attention_date, placeholder:"Attention Date", label: "Attention Date" %>
-        <%= f.input :deadline, placeholder:"Deadline", label: "Deadline" %>
-        <%= f.input :expiration_date, placeholder:"Expiration Date", label: "Expiration Date" %>
-        <%= f.input :planned_date, placeholder:"Planned Date", label: "Planned Date" %>
-        <%= f.input :starting_time, placeholder:"Starting Time", label: "Starting Time" %>
-        <%= f.input :removed_date, placeholder:"Removed Date", label: "Removed Date" %>
-        <%= f.input :status, placeholder:"Status", label: "Status" %>
+        <%= f.input :short_description, placeholder:"Short Description", label: false %>
+        <%= f.input :long_description, placeholder:"Long Description", label: false %>
+        <%= f.input :nature, placeholder:"Nature", label: false %>
+        <%= f.input :urgency, placeholder:"Urgency", label: false %>
+        <%= f.input :duration, placeholder:"Duration", label: false %>
+        <%= f.input :attention_date, placeholder:"Attention Date", label: false %>
+        <%= f.input :deadline, placeholder:"Deadline", label: false %>
+        <%= f.input :expiration_date, placeholder:"Expiration Date", label: false %>
+        <%= f.input :planned_date, placeholder:"Planned Date", label: false %>
+        <%= f.input :starting_time, placeholder:"Starting Time", label: false %>
+        <%= f.input :removed_date, placeholder:"Removed Date", label: false %>
+        <%= f.input :status, placeholder:"Status", label: false %>
         <%= f.button :submit, "Add Task", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
 </div>
+
