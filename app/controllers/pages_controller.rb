@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @today = Date.today
+    @current_time = Time.now
   end
 
   def team
