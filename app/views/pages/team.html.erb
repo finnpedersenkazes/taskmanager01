@@ -1,10 +1,20 @@
 <div class="container text-center">
-  <h1>Meet the team</h1>
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <h1 class="text-center">Meet the team</h1>
 
-    <% @members.each do |member| %>
-      <li><%= member%></li>
-    <% end %>
-
-  </ul>
-
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @members.each do |member| %>
+          <tr>
+            <td><%= member%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
