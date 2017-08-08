@@ -9,7 +9,7 @@ puts 'Creating 20 fake tasks ...'
     short_description: Faker::HarryPotter.character,
     long_description: Faker::Hacker.say_something_smart,
     nature: Faker::Hacker.adjective + ' ' + Faker::Hacker.noun + ' ' + Faker::Hacker.ingverb,
-    urgency: ["I will be in trouble","Normal","Puede esperar hasta mañana","Important to my girlfriend","ASAP"].sample,
+    urgency: ["I will be in trouble","Normal","It can wait","Delegate it to someone else","ASAP"].sample,
     duration: ["15","30","45","60","90","120"].sample,
     attention_date: Faker::Date.between(Date.today, 2.days.from_now),
     deadline: Faker::Date.between(2.days.from_now, 10.days.from_now),
