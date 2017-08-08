@@ -1,23 +1,60 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1 class="text-center">Update Task</h1>
-      <%= simple_form_for @task do |f| %>
-        <%= f.input :short_description, placeholder:"Short Description", label: "Short Description" %>
-        <%= f.input :long_description, placeholder:"Long Description", label: "Long Description" %>
-        <%= f.input :nature, placeholder:"Nature", label: "Nature" %>
-        <%= f.input :urgency, placeholder:"Urgency", label: "Urgency" %>
-        <%= f.input :duration, placeholder:"Duration", label: "Duration" %>
-        <%= f.input :attention_date, placeholder:"Attention Date", label: "Attention Date" %>
-        <%= f.input :deadline, placeholder:"Deadline", label: "Deadline" %>
-        <%= f.input :expiration_date, placeholder:"Expiration Date", label: "Expiration Date" %>
-        <%= f.input :planned_date, placeholder:"Planned Date", label: "Planned Date" %>
-        <%= f.input :starting_time, placeholder:"Starting Time", label: "Starting Time" %>
-        <%= f.input :removed_date, placeholder:"Removed Date", label: "Removed Date" %>
-        <%= f.input :status, placeholder:"Status", label: "Status" %>
-        <%= f.button :submit, "Update Task", class: "btn btn-primary" %>
-        <%= link_to "Cancel", :back, class: "btn btn-warning" %>
+      <% if @task.status == "unplanned" %>
+        <h1 class="text-center">Update Unplanned Task</h1>
+        <%= simple_form_for @task do |f| %>
+          <%= f.input :short_description, placeholder:"Short Description", label: "Short Description" %>
+          <%= f.input :long_description, placeholder:"Long Description", label: "Long Description" %>
+          <%= f.input :nature, placeholder:"Nature", label: "Nature" %>
+          <%= f.input :urgency, placeholder:"Urgency", label: "Urgency" %>
+          <%= f.input :duration, placeholder:"Duration", label: "Duration" %>
+          <%= f.input :attention_date, as: :date_picker, placeholder: "Attention Date", label: "Attention Date" %>
+          <%= f.input :deadline, as: :date_picker, placeholder: "Deadline", label: "Deadline" %>
+          <%= f.input :expiration_date, as: :date_picker, placeholder: "Expiration Date", label: "Expiration Date"  %>
+          <%= f.button :submit, "Update Task", class: "btn btn-primary" %>
+          <%= link_to "Cancel", :back, class: "btn btn-warning" %>
+        <% end %>
+      <% elsif @task.status == "planned" %>
+        <h1 class="text-center">Update Planned Task</h1>
+        <%= simple_form_for @task do |f| %>
+          <%= f.input :short_description, placeholder:"Short Description", label: "Short Description" %>
+          <%= f.input :long_description, placeholder:"Long Description", label: "Long Description" %>
+          <%= f.input :nature, placeholder:"Nature", label: "Nature" %>
+          <%= f.input :urgency, placeholder:"Urgency", label: "Urgency" %>
+          <%= f.input :duration, placeholder:"Duration", label: "Duration" %>
+          <%= f.input :planned_date, as: :date_picker, placeholder:"Planned Date", label: "Planned Date" %>
+          <%= f.input :starting_time, as: :time_picker, placeholder:"Starting Time", label: "Starting Time" %>
+          <%= f.button :submit, "Update Task", class: "btn btn-primary" %>
+          <%= link_to "Cancel", :back, class: "btn btn-warning" %>
+        <% end %>
+      <% elsif @task.status == "done" %>
+        <h1 class="text-center">Update Done Task</h1>
+        <%= simple_form_for @task do |f| %>
+          <%= f.input :short_description, placeholder:"Short Description", label: "Short Description" %>
+          <%= f.input :long_description, placeholder:"Long Description", label: "Long Description" %>
+          <%= f.input :nature, placeholder:"Nature", label: "Nature" %>
+          <%= f.input :urgency, placeholder:"Urgency", label: "Urgency" %>
+          <%= f.input :duration, placeholder:"Duration", label: "Duration" %>
+          <%= f.input :planned_date, as: :date_picker, placeholder:"Planned Date", label: "Planned Date" %>
+          <%= f.input :starting_time, as: :time_picker, placeholder:"Starting Time", label: "Starting Time" %>
+          <%= f.button :submit, "Update Task", class: "btn btn-primary" %>
+          <%= link_to "Cancel", :back, class: "btn btn-warning" %>
+        <% end %>
+      <% else %>
+        <h1 class="text-center">Update Deleted Task</h1>
+        <%= simple_form_for @task do |f| %>
+          <%= @task.short_description %>
+          <%= @task.removed_date %>
+          <%= @task.status %>
+          <%= f.button :submit, "Update Task", class: "btn btn-primary" %>
+          <%= link_to "Cancel", :back, class: "btn btn-warning" %>
+        <% end %>
       <% end %>
+
     </div>
   </div>
 </div>
+
+
+

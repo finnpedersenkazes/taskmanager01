@@ -1,6 +1,10 @@
 class Task < ApplicationRecord
 
+  def change_status!(status)
+    self.status = status
+    self.save
+  end
 
-  # source: The :has_many :through relation
-  # https://github.com/nathanvda/cocoon/wiki/A-guide-to-doing-nested-model-forms#the-has_many-through-relation
+  enum status: [:unplanned, :planned, :done, :deleted]
 end
+

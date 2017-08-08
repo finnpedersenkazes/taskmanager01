@@ -35,6 +35,12 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x and 5.1.x
+gem 'faker'
+# gem 'jquery-ui-rails' # for datepicker
+# gem 'bootstrap-datepicker-rails'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+# gem 'simple-form-datepicker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

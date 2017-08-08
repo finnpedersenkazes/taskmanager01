@@ -1,8 +1,11 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:show, :edit, :update, :destroy] 
+  before_action :find_task, only: [:show, :edit, :update, :destroy, :change_status]
 
   def index
-    @tasks = Task.all
+    @unplanned_tasks = Task.where(status: 0).order(:urgency)
+    @planned_tasks = Task.where(status: 1).order(:planned_date)
+    @done_tasks = Task.where(status: 2).order(:removed_date)
+    @deleted_tasks = Task.where(status: 3).order(:removed_date)
   end
 
   def show
@@ -32,8 +35,14 @@ class TasksController < ApplicationController
     end
   end
 
+  def change_status
+    @task.change_status!(params[:status])
+    redirect_to tasks_path
+  end
+
   def destroy
-    @task.destroy
+    @task.change_status!(:deleted)
+    # @task.destroy
     redirect_to tasks_path
   end
 
@@ -47,3 +56,4 @@ class TasksController < ApplicationController
     params.require(:task).permit(:short_description,:long_description,:nature,:urgency,:duration,:attention_date,:deadline,:expiration_date,:planned_date,:starting_time,:removed_date,:status)
   end
 end
+

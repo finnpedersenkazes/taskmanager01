@@ -8,7 +8,13 @@ Rails.application.routes.draw do
 
   # scope "/:locale" do
   scope "(:locale)", locale: /en|fr|da|ar|ja/ do
-    resources :tasks
+    resources :tasks do
+      member do
+        patch :change_status
+      end
+    end
+    # patch "/tasks/:id/change_status" => tasks#change_status
+
   end
   # get "/tasks" => tasks#index
   # get "/tasks/:id" => tasks#show
@@ -18,3 +24,5 @@ Rails.application.routes.draw do
   # patch "/tasks/:id" => tasks#update
   # delete "/tasks/:id" => tasks#destroy
 end
+
+# member action apply to specfic and collections to all resources / tasks
